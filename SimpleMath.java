@@ -1,16 +1,17 @@
 package lab06;
 
+/**
+ * Class for handling basic Math Operation
+ * 
+ * @param a first number
+ * @param b second number
+ * @return result of each calculation
+ */
 public class SimpleMath {
     static double addition(double a, double b) {
         return a + b;
     }
 
-    /**
-     * 
-     * @param a first number
-     * @param b second number
-     * @return result of each calculation
-     */
     static double subtraction(double a, double b) {
         return a - b;
     }

@@ -56,10 +56,18 @@ public class SimpleMathTest {
         assertEquals(5, result);
         assertEquals(2.5, SimpleMath.division(-5, -2));
     }
+    @Test
+    public void testDivisionOverZero() {
+        Exception exc = assertThrows(IllegalArgumentException.class, () -> SimpleMath.division(-1, 0));
+        assertNotNull(exc);
+        assertEquals("Undefined: division by zero.", exc.getMessage());
+    }
 
     @Test
     public void testDivisionZeroOverZero() {
         Exception exc = assertThrows(IllegalArgumentException.class, () -> SimpleMath.division(0, 0));
         assertNotNull(exc);
+        assertEquals("Indeterminate: both numerator and denominator are zero.", exc.getMessage());
+
     }
 }
