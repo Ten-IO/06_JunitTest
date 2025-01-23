@@ -1,4 +1,4 @@
-package test06;
+package lab06;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Test;
@@ -7,7 +7,7 @@ public class SimpleMathTest {
     @Test
     public void testAdditionPositive() {
         double result = SimpleMath.addition(3.5, 7.5);
-        assertEquals(11, result);
+        assertEquals(11.0, result, 0.01);
     }
 
     @Test
@@ -59,7 +59,7 @@ public class SimpleMathTest {
 
     @Test
     public void testDivisionZeroOverZero() {
-        Exception exc = assertThrows(ArithmeticException.class, () -> SimpleMath.division(0, 0));
+        Exception exc = assertThrows(IllegalArgumentException.class, () -> SimpleMath.division(0, 0));
         assertNotNull(exc);
     }
 }

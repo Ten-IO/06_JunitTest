@@ -41,13 +41,14 @@ public class BookManageTest {
     @Test
     void testUpdate() {
         bookManage.listBook.add(new Book("OriginTitle", "OriginAuthor", 10.0f, 111, "OriginPusblisher", 2022));
-        simulateInput("1\nUpdateTitle\nUpdateAuthor\n20.0f\n221\nUpdatedCorp.\n2023\n");
+        String testInput = "1\nUpdateTitle\nUpdateAuthor\n20.0\n221\nUpdatedCorp.\n2023\n";
+        simulateInput(testInput);
         bookManage.updateBook();
 
         Book updatedTest = bookManage.listBook.get(0);
         assertEquals("UpdateTitle", updatedTest.getTitle());
         assertEquals("UpdateAuthor", updatedTest.getAuthor());
-        assertEquals(20.0f, updatedTest.getPrice());
+        assertEquals(20.0, updatedTest.getPrice());
         assertEquals(221, updatedTest.getIsbn());
         assertEquals("UpdatedCorp.", updatedTest.getPublisher());
         assertEquals(2023, updatedTest.getPublishedYear());

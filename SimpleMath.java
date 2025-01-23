@@ -21,12 +21,12 @@ public class SimpleMath {
 
     static double division(double a, double b) {
         if (a == 0 && b == 0) {
-            throw new IllegalArgumentException("Indeterminate");
+            throw new IllegalArgumentException("Indeterminate: both numerator and denominator are zero.");
         }
         if (b == 0) {
-            throw new IllegalArgumentException("Undefined");
-        } else
-            return a / b;
+            throw new IllegalArgumentException("Undefined: division by zero.");
+        } 
+        return a / b;
     }
 
 }

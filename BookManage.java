@@ -93,6 +93,7 @@ public class BookManage {
         for (Book i : listBook) {
             i.show();
         }
+        System.out.println();
     }
 
     void updateBook() {
@@ -104,14 +105,13 @@ public class BookManage {
             System.out.print("New Title: ");
             String newTitle = scan.nextLine();
             if (!newTitle.isBlank())
-                book.setTitle(scan.nextLine());
+                book.setTitle(newTitle);
             System.out.print("Author: ");
             String newAuthor = scan.nextLine();
             if (!newAuthor.isBlank()) {
-                book.setAuthor(scan.nextLine());
+                book.setAuthor(newAuthor);
             }
             System.out.print("Price: ");
-            scan.nextLine();
             book.setPrice(scan.nextFloat());
             scan.nextLine();
             System.out.print("ISBN: ");
@@ -148,6 +148,8 @@ public class BookManage {
     public static void main(String[] args) {
         BookManage foo = new BookManage();
         foo.addBook(new Book("Dummy Book", "Unknown", 1.0f, 002, "Vila Corp.", 2024));
+        foo.listAll();
+        foo.updateBook();
         foo.listAll();
     }
 }
