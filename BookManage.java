@@ -90,10 +90,14 @@ public class BookManage {
     }
 
     void listAll() {
-        for (Book i : listBook) {
-            i.show();
+        if (!listBook.isEmpty()) {
+            for (Book i : listBook) {
+                i.show();
+            }
+            System.out.println();
+        } else {
+            System.out.println("There is no record yet");
         }
-        System.out.println();
     }
 
     void updateBook() {
@@ -143,13 +147,5 @@ public class BookManage {
     void removeAllBook() {
         listBook.clear();
         System.out.println("All books successfully removed");
-    }
-
-    public static void main(String[] args) {
-        BookManage foo = new BookManage();
-        foo.addBook(new Book("Dummy Book", "Unknown", 1.0f, 002, "Vila Corp.", 2024));
-        foo.listAll();
-        foo.updateBook();
-        foo.listAll();
     }
 }

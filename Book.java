@@ -19,7 +19,7 @@ public class Book {
     }
 
     void show() {
-        System.out.printf(" %-20s %-10s $%7.2f %4d %4d", title, author, price, isbn, publishedYear);
+        System.out.printf(" %-20s %-10s $%7.2f %14d %4d", title, author, price, isbn, publishedYear);
     }
 
     public String getTitle() {
